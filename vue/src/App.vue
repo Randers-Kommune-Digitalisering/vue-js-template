@@ -23,7 +23,7 @@ fetch('/status')
     <TheWelcome />
     <div class="status">
       <h2>Status:</h2>
-      <h3 v-if="status">{{status.Status}}</h3>
+      <h3 v-if="status">{{status.status}}</h3>
       <h3 v-else="status">Not running</h3>
     </div>
   </main>
