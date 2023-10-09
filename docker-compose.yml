@@ -1,11 +1,11 @@
 version: "3.9"
 services:
-  vue:
-    build: vue
+  node-js:
+    build: .
     networks:
-      - vue
+      - express_vue
     ports:
       - "80:80"      
 networks: 
-  vue:
-    name: vue
+  express_vue:
+    name: express_vue
