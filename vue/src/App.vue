@@ -3,19 +3,11 @@ import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 
 import { ref } from 'vue';
-<<<<<<< HEAD
 const status_msg = ref(null);
 
 fetch('/status')
     .then(response => response = response.json())
     .then(data => status_msg.value = data);
-=======
-const status = ref(null);
-
-fetch('/status')
-    .then(response => response = response.json())
-    .then(data => status.value = data);
->>>>>>> 7bc5e9c4de1d668546675a49721e3b4a92ade682
 </script>
 
 <template>
@@ -29,17 +21,10 @@ fetch('/status')
 
   <main>
     <TheWelcome />
-<<<<<<< HEAD
     <div>
       <h2>Status:</h2>
       <h3 v-if="status_msg">{{status_msg.status}}</h3>
       <h3 v-else>not running</h3>
-=======
-    <div class="status">
-      <h2>Status:</h2>
-      <h3 v-if="status">{{status.status}}</h3>
-      <h3 v-else="status">Not running</h3>
->>>>>>> 7bc5e9c4de1d668546675a49721e3b4a92ade682
     </div>
   </main>
 </template>
