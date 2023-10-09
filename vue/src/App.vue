@@ -1,6 +1,13 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+
+import { ref } from 'vue';
+const status_msg = ref(null);
+
+fetch('/status')
+    .then(response => response = response.json())
+    .then(data => status_msg.value = data);
 </script>
 
 <template>
@@ -14,6 +21,11 @@ import TheWelcome from './components/TheWelcome.vue'
 
   <main>
     <TheWelcome />
+    <div>
+      <h2>Status:</h2>
+      <h3 v-if="status_msg">{{status_msg.status}}</h3>
+      <h3 v-else>not running</h3>
+    </div>
   </main>
 </template>
 
