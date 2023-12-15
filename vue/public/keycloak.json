@@ -1,0 +1,9 @@
+{
+  "realm": "randers-kommune",
+  "auth-server-url": "https://keycloak.t0.hosting.kitkube.dk/",
+  "ssl-required": "external",
+  "resource": "vue-js-template",
+  "public-client": true,
+  "confidential-port": 0,
+  "pkce-method": "S256"
+}
