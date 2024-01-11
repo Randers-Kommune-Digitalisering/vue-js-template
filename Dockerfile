@@ -1,5 +1,7 @@
 FROM node:lts-alpine
 
+ENV HOST=0.0.0.0:80
+
 # make the 'app' folder the current working directory
 WORKDIR /app
 

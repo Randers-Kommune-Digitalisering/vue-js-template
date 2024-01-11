@@ -5,7 +5,9 @@ services:
     networks:
       - express_vue
     ports:
-      - "80:80"      
+      - "80:80"
+    volumes:
+      - ./vue:/app/vue
 networks: 
   express_vue:
     name: express_vue
