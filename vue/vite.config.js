@@ -6,21 +6,15 @@ export default defineConfig({
   plugins: [
     vue(),
   ],
+  server: {
+    proxy: {
+      '/out/': 'http://localhost:1880/',
+      '/in/': 'http://localhost:1880/'
+    }
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  },
-  configureWebpack: {
-    entry: "./src/main.js",
-    devServer: {
-        hot: true,
-    },
-    watch: true,
-    watchOptions: {
-        ignored: /node_modules/,
-        poll: 1000,
-    },
-  },
-  transpileDependencies: true
+  }
 })
